@@ -21,7 +21,6 @@ Light/Dark Mode Toggle : dark mode and light mode for user preference.
 Cookie & LocalStorage Support : saves user preferences so you don’t have to re order that cheeseburger twice.
 
 
-Project structure
 Burger-Theme-Website-main/
 │── index.html        # Home page
 │── menu.html         # Menu page
@@ -35,13 +34,14 @@ Burger-Theme-Website-main/
 ├── JS/
 │   ├── main.js       # Main site interactions
 │   ├── validation.js # Form validation logic
-│   ├── cookie.js     # Cookie/local storage handling
+│   ├── cookie.js     # Cookie and local storage handling
 │   └── darkmode.js   # Light/Dark mode toggle
 │
-├── images/           # All the image  files 
-└── README.md         # You're reading it right noww.
+├── images/           # All image files
+└── README.md         # This file you’re reading now
 
-🛠️ Tech Stack
+
+🛠️ Tech Stacks
 HTML5 for structure
 
 CSS3 (Flexbox, Grid, Transitions) for styling and layouts
