@@ -20,38 +20,36 @@ Light/Dark Mode Toggle : dark mode and light mode for user preference.
 
 Cookie & LocalStorage Support : saves user preferences so you don’t have to re order that cheeseburger twice.
 
+### Project Structure
 
-Burger-Theme-Website-main/
-│── index.html        # Home page
-│── menu.html         # Menu page
-│── contact.html      # Contact form page
-│── order.html        # Order form page
+│── index.html # Home page
+│── menu.html # Menu page
+│── contact.html # Contact form page
+│── order.html # Order form page
 │
 ├── CSS/
-│   ├── style.css     # Main styles
-│   └── order.css     # Order page styles
+│ ├── style.css # Main styles
+│ └── order.css # Order page styles
 │
 ├── JS/
-│   ├── main.js       # Main site interactions
-│   ├── validation.js # Form validation logic
-│   ├── cookie.js     # Cookie and local storage handling
-│   └── darkmode.js   # Light/Dark mode toggle
+│ ├── main.js # Main site interactions
+│ ├── validation.js # Form validation logic
+│ ├── cookie.js # Cookie and local storage handling
+│ └── darkmode.js # Light/Dark mode toggle
 │
-├── images/           # All image files
-└── README.md         # This file you’re reading now
+├── images/ # All image files
+└── README.md # This file you’re reading now
 
 
-🛠️ Tech Stacks
-HTML5 for structure
+🛠️ Tech Stack
+HTML5 to build a clean and well-structured webpage
 
-CSS3 (Flexbox, Grid, Transitions) for styling and layouts
+CSS3 with Flexbox and Grid for flexible layouts, plus smooth transitions to make things feel alive
 
-JavaScript for interactivity
+JavaScript to bring the page to life with interactive features
 
-jQuery for smooth animations and DOM magic
+jQuery to easily handle animations and make working with the page elements simple
 
-Google Fonts for a clean, modern look
+Google Fonts to give the text a fresh, modern look
 
-SVG Icons for crisp adn scalable graphics
-
-
+SVG Icons so graphics stay sharp and clear no matter the screen size
