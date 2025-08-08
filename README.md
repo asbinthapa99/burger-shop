@@ -41,15 +41,14 @@ Cookie & LocalStorage Support : saves user preferences so you don’t have to re
 └── README.md # This file you’re reading now
 
 
-🛠️ Tech Stack
-HTML5 to build a clean and well-structured webpage
 
-CSS3 with Flexbox and Grid for flexible layouts, plus smooth transitions to make things feel alive
+---
 
-JavaScript to bring the page to life with interactive features
+### Tech Stack
 
-jQuery to easily handle animations and make working with the page elements simple
-
-Google Fonts to give the text a fresh, modern look
-
-SVG Icons so graphics stay sharp and clear no matter the screen size
+- HTML5 for structure  
+- CSS3 (Flexbox, Grid, Transitions) for styling and layouts  
+- JavaScript for interactivity  
+- jQuery for smooth animations and DOM magic  
+- Google Fonts for a clean, modern look  
+- SVG Icons for crisp and scalable graphics
