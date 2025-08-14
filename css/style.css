@@ -1,233 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-
-/***************** CSS VARIABLES ******************/
-:root {
-    --header-height: 3.5rem;
-
-    /***************** COLORS ******************/
-    --first-color: hsl(56, 94%, 49%);
-    --first-color-alt: hsl(45, 99%, 48%);
-    --second-color: hsl(22, 100%, 8%);
-    --white-color: hsl(161, 88%, 39%);
-    --title-color: hsl(22, 100%, 8%);
-    --text-color: hsl(22, 24%, 32%);
-    --text-color-light: hsl(23, 16%, 40%);
-    --body-color: hsl(34, 100%, 92%);
-    --body-color-alt: hsl(34, 100%, 88%);
-    --container-color: hsl(34, 100%, 96%);
-    --shadow-small-img: drop-shadow(0 4px 16px hsla(22, 100%, 8%, .2));
-    --shadow-big-img: drop-shadow(0 8px 24px hsla(22, 100%, 8%, .2));
-
-    /***************** FONTSS *****************/
-    /* 1rem = 16px */
-    --body-font: "Montserrat", sans-serif;
-    --second-font: "Aclonica", sans-serif;
-    --biggest-font-size: 3rem;
-    --h1-font-size: 1.5rem;
-    --h2-font-size: 1.25rem;
-    --h3-font-size: 1rem;
-    --normal-font-size: .938rem;
-    --small-font-size: .813rem;
-
-    /***************** FONT WEIGHT *****************/
-    --font-regular: 400;
-    --font-medium: 500;
-    --font-semi-bold: 600;
-
-    /***************** Z INDEX *****************/
-    --z-tooltip: 10;
-    --z-fixed: 100;
-}
-
-
-/***************** RESPONSIVE TYPOGRAPHY *****************/
-@media screen and (min-width: 1150px) {
-    :root {
-        --biggest-font-size: 4.5rem;
-        --h1-font-size: 2.25rem;
-        --h2-font-size: 1.5rem;
-        --h3-font-size: 1.25rem;
-        --normal-font-size: 1rem;
-        --small-font-size: .875rem;
-    }
-}
-
-
-/****************** BASE CSS *****************/
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: var(--body-font);
-    font-size: var(--normal-font-size);
-    background-color: var(--body-color);
-    color: var(--text-color);
-}
-
-h1, h2, h3, h4 {
-    color: var(--title-color);
-    font-family: var(--second-font);
-    font-weight: var(--font-regular);
-}
-
-ul {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-}
-
-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-
-
-/******************* REUSABLE CSS CLASSES ******************/
-.container {
-    max-width: 1120px;
-    margin-inline: 1.5rem;
-}
-
-.grid {
-    display: grid;
-    gap: 1.5rem;
-}
-
-.section {
-    padding-block: 5rem 1rem;
-}
-
-.section__title {
-    text-align: center;
-    font-size: var(--h1-font-size);
-    margin-bottom: 2rem;
-}
-
-.main {
-    overflow: hidden;
-}
-
-
-/******************* HEADER & NAV *******************/
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    background-color: var(--body-color);
-    z-index: var(--z-fixed);
-    transition: box-shadow .4s;
-    box-shadow: 0 4px 16px hsla(22, 100%, 8%, .1);
-}
-
-.nav {
-    position: relative;
-    height: var(--header-height);
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav__logo {
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-
-    color: var(--title-color);
-    font-family: var(--second-font);
-}
-
-.nav__logo img {
-    width: 20px;
-}
-
-.nav__logo div {
-    padding: 6px;
-    border-radius: 0.5rem;
-    background-color: var(--first-color);
-}
-
-.nav__close,
-.nav__toggle {
-    display: flex;
-    font-size: 1.5rem;
-    color: var(--title-color);
-    cursor: pointer;
-}
-
-
-/******************* Navbar for mobile devices *******************/
-@media screen and (max-width: 1150px) {
-    .nav__menu {
-        position: fixed;
-        top: -100%;
-        left: 0;
-
-        width: 100%;
-        background-color: var(--body-color);
-        padding-block: 4.5rem 3.5rem;
-        box-shadow: 0 4px 16px hsla(22, 100%, 8%, .2);
-        transition: top .4s;
-    }
-}
-
-.nav__list {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-
-    text-align: center;
-}
-
-.nav__link {
-    position: relative;
-    color: var(--title-color);
-    font-family: var(--second-font);
-}
-
-/* Create underline for active link */
-.nav__link::after {
-    content: '';
-    width: 0;
-    height: 3px;
-    transition: width .3s;
-    background-color: var(--first-color);
-
-    position: absolute;
-    left: 0;
-    bottom: -0.5rem;
-}
-
-.nav__link:hover::after {
-    width: 100%;
-}
-
-/* Place close button on top right corner */
-.nav__close {
-    position: absolute;
-    top: 1rem;
-    right: 1.5rem;
-}
-
-/* Show menu on mobile devices */
-.show-menu {
-    top: 0;
-}
-
-
 /******************* HOME *******************/
 .home__container {
     padding-block: 3rem 2rem;
@@ -243,18 +13,19 @@ img {
 .home__title {
     font-size: var(--biggest-font-size);
     margin-bottom: 1rem;
+    font-family: var(--second-font);
+    animation: float 2.5s ease-in-out forwards, fadeIn 2s ease-in-out;
 }
 
 .home__description {
     margin-bottom: 2.5rem;
+    color: var(--text-color);
 }
 
-/* Add potato sticker below the description */
 .home__sticker {
     width: 40px;
     rotate: 15deg;
     opacity: 0.5;
-
     position: absolute;
     bottom: 2rem;
     right: 1rem;
@@ -267,21 +38,11 @@ img {
     justify-self: center;
 }
 
-.home__ingredient {
-    width: 60px;
-    filter: var(--shadow-small-img);
-    position: absolute;
-    z-index: 2;
-}
-
-.home__burger,
-.home__dish {
-    filter: var(--shadow-big-img);
-}
-
 .home__burger {
     width: 280px;
+    filter: var(--shadow-big-img);
     z-index: 2;
+    animation: float 3s ease-in-out infinite, fadeIn 1.5s ease-in-out;
 }
 
 .home__dish {
@@ -289,60 +50,26 @@ img {
     width: 300px;
     position: absolute;
     bottom: -2.5rem;
+    filter: var(--shadow-big-img);
+    animation: float 3s ease-in-out infinite, fadeIn 1.5s ease-in-out;
 }
 
-/* Ingredients Style */
-.home__potato-1 {
-    left: -1rem;
-    top: 0.75rem;
-}
-
-.home__potato-2 {
-    right: -0.75rem;
-    bottom: -2rem;
-    rotate: 90deg;
-}
-
-.home__tomato-1 {
-    width: 40px;
-    top: -1rem;
-    right: 6rem;
-}
-
-.home__tomato-2 {
-    width: 40px;
-    left: 5.5rem;
-    bottom: -1.5rem;
-}
-
-.home__lettuce-1 {
-    top: 2.5rem;
-    right: -2rem;
-    transform: scaleX(-1);
-}
-
-.home__lettuce-2 {
-    left: -2rem;
-    bottom: 1rem;
-
-}
-
-
-/******************* BUTTON *******************/
-.button  {
-    /* display: inline-flex; */
+.button {
     background-color: var(--first-color);
     color: var(--title-color);
     padding: 1rem 1.5rem;
     font-family: var(--second-font);
     border-radius: 4rem;
     transition: box-shadow .4s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .button:hover {
     box-shadow: 0 8px 24px hsla(22, 100%, 8%, .2);
 }
-
 
 /******************* RECIPE *******************/
 .recipe {
@@ -353,6 +80,7 @@ img {
     grid-template-columns: 0.5fr 1fr;
     column-gap: 1rem;
     padding-bottom: 2rem;
+    animation: float 3s ease-in-out infinite, fadeIn 1.5s ease-in-out;
 }
 
 .recipe__image {
@@ -365,9 +93,9 @@ img {
     max-width: initial;
     width: 200px;
     filter: var(--shadow-big-img);
-
     position: absolute;
     left: -6rem;
+    animation: float 3s ease-in-out infinite, fadeIn 1.5s ease-in-out;
 }
 
 .recipe__data {
@@ -388,7 +116,6 @@ img {
     background-color: var(--first-color);
     border: 3px solid var(--container-color);
     border-radius: 0.75rem;
-
     display: grid;
     place-items: center;
 }
@@ -398,361 +125,24 @@ img {
     filter: var(--shadow-small-img);
 }
 
-.recipe__title  {
+.recipe__title {
     font-size: var(--normal-font-size);
     margin-bottom: 0.5rem;
+    font-family: var(--second-font);
+    text-decoration: none;
 }
 
-.recipe__description  {
+.recipe__description {
     font-size: var(--small-font-size);
+    color: var(--text-color-light);
 }
 
-/* Change the order of the elements of the recipe */
 .recipe__card:nth-child(even) .recipe__box {
     order: 1;
 }
 
-
-/******************* POPULAR  *******************/
-.popular {
-    background-color: var(--body-color-alt);
-}
-
-.popular__container  {
-    padding-block: 2rem;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3.5rem 1.5rem;
-}
-
-.popular__card  {
-    position: relative;
-    background-color: var(--first-color);
-    padding: 6rem 0.75rem 1rem;
-    border-radius: 1rem;
-    border: 4px solid var(--container-color);
-}
-
-.popular__img {
-    position: absolute;
-    top: -2rem;
-    left: 0;
-    right: 0;
-
-    width: 120px;
-    margin: 0 auto;
-    filter: var(--shadow-small-img);
-    transition: transform .4s;
-}
-
-.popular__title {
-    font-size: var(--normal-font-size);
-    margin-bottom: 0.75rem;
-}
-
-.popular__price  {
-    color: var(--title-color);
-    font-family: var(--second-font);
-    font-size: var(--h2-font-size);
-}
-
-.popular__button {
-    position: absolute;
-    right: 0.75rem;
-    bottom: 1rem;
-
-    outline: none;
-    border: none;
-    background-color: var(--second-color);
-    color: var(--white-color);
-    padding: 6px;
-    border-radius: 0.5rem;
-    font-size: 1.25rem;
-
-    display: inline-flex;
-    cursor: pointer;
-}
-
-.popular__card:hover .popular__img {
-    transform: translateY(-0.5rem);
-}
-
-
-/******************* DELIVERY *******************/
-.delivery__container  {
-    row-gap: 2.5rem;
-}
-
-.delivery__data  {
-    position: relative;
-    text-align: center;
-}
-
-.delivery__container .section__title {
-    margin-bottom: 1rem;
-}
-
-.delivery__description  {
-    margin-bottom: 2rem;
-}
-
-.delivery__sticker {
-    width: 30px;
-    rotate: 15deg;
-    opacity: 0.5;
-
-    position: absolute;
-    right: 1rem;
-    bottom: 0.5rem;
-}
-
-.delivery__img {
-    width: 320px;
-    justify-self: center;
-    filter: var(--shadow-big-img);
-}
-
-
-/******************* CONTACT SECTION *******************/
-.contact__container {
-    position: relative;
-    background-color: var(--second-color);
-    padding: 4rem 2rem;
-    border-radius: 2rem;
-    overflow: hidden;
-    display: grid;
-    gap: 2rem;
-    justify-content: center;
-    align-items: center;
-}
-
-.contact__content {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    align-items: center;
-    text-align: center;
-}
-
-.contact__data {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.contact__data input,
-.contact__data textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid var(--text-color-light);
-    border-radius: 0.5rem;
-    font-size: var(--normal-font-size);
-    font-family: var(--body-font);
-    color: var(--text-color);
-    background-color: var(--white-color);
-}
-
-.contact__data input:focus,
-.contact__data textarea:focus {
-    outline: none;
-    border-color: var(--first-color);
-    box-shadow: 0 0 4px var(--first-color);
-}
-
-.contact__data button {
-    padding: 0.75rem 1.5rem;
-    background-color: var(--first-color);
-    color: var(--white-color);
-    border: none;
-    border-radius: 0.5rem;
-    font-size: var(--normal-font-size);
-    font-family: var(--second-font);
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.contact__data button:hover {
-    background-color: var(--first-color-alt);
-    transform: scale(1.05);
-}
-
-.contact__image {
-    display: flex;
-    justify-content: center;
-}
-
-.contact__img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 1rem;
-    box-shadow: var(--shadow-big-img);
-}
-
-/* Decorative Stickers */
-.contact__sticker-1,
-.contact__sticker-2 {
-    position: absolute;
-    opacity: 0.5;
-    z-index: 1;
-}
-
-.contact__sticker-1 {
-    width: 50px;
-    top: 1rem;
-    left: 1rem;
-}
-
-.contact__sticker-2 {
-    width: 40px;
-    bottom: 1rem;
-    right: 1rem;
-}
-
-/* Responsive Design */
-@media screen and (min-width: 768px) {
-    .contact__content {
-        grid-template-columns: 1fr 1fr;
-        text-align: left;
-    }
-
-    .contact__data {
-        align-items: flex-start;
-    }
-
-    .contact__image {
-        justify-content: flex-end;
-    }
-}
-
-@media screen and (min-width: 1150px) {
-    .contact__container {
-        padding: 6rem 4rem;
-    }
-
-    .contact__content {
-        gap: 4rem;
-    }
-
-    .contact__sticker-1 {
-        width: 70px;
-        top: 2rem;
-        left: 2rem;
-    }
-
-    .contact__sticker-2 {
-        width: 60px;
-        bottom: 2rem;
-        right: 2rem;
-    }
-}
-
-
-/******************* FOOTER *******************/
-.footer {
-    padding-block: 3rem 2rem;
-}
-
-.footer__container  {
-    row-gap: 2rem;
-}
-
-.footer__logo {
-    font-size: var(--h1-font-size);
-    font-family: var(--second-font);
-    color: var(--title-color);
-    justify-self: center;
-}
-
-.footer__content {
-    grid-template-columns: repeat(2, max-content);
-    justify-content: center;
-}
-
-.footer__link {
-    color: var(--text-color);
-}
-
-.footer__social {
-    grid-column: 1 / 3;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.footer__social a {
-    width: 32px;
-    height: 32px;
-    background-color: var(--first-color);
-    color: var(--second-color);
-    font-size: 1.5rem;
-    border-radius: 0.5rem;
-    transition: transform .4s;
-
-    display: grid;
-    place-items: center;
-}
-
-.footer__social a:hover  {
-    transform: translateY(-0.25rem);
-}
-
-.footer__copy {
-    display: block;
-    text-align: center;
-    font-size: var(--small-font-size);
-    margin-top: 3.5rem;
-}
-
-
-/******************* MODIFY SCROLL BAR *******************/
-::-webkit-scrollbar {
-    width: 0.6rem;
-    background-color: hsl(34, 16%, 75%);
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: hsl(34, 16%, 65%);
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background-color: hsl(34, 16%, 55%);
-}
-
-
-/******************* Go To Top BUTTON *******************/
-.scrollup {
-    position: fixed;
-    right: 1rem;
-    bottom: -50%;
-    color: var(--title-color);
-    background-color: var(--body-color);
-    box-shadow: 0 4px 16px hsla(22, 100%, 8%, .2);
-
-    display: inline-flex;
-    padding: 6px;
-    font-size: 1.25rem;
-    border-radius: 0.35rem;
-    z-index: var(--z-tooltip);
-    transition: bottom 0.4s, transform 0.4s;
-}
-
-.scrollup:hover {
-    transform: translateY(-0.5rem);
-}
-
-/* Show Go To Top Button */
-.show-scroll {
-    bottom: 3rem;
-}
-
-
 /******************* BREAKPOINTS FOR RESPONSIVE *******************/
-
-/* For small devices */
 @media screen and (max-width: 330px) {
-    .container {
-        margin-inline: 1rem;
-    }
-
     .home__title {
         font-size: 2.5rem;
     }
@@ -773,26 +163,10 @@ img {
     .recipe__img {
         left: -8rem;
     }
-
-    .popular__container {
-        grid-template-columns: 160px;
-        justify-content: center;
-    }
-
-    .footer__social {
-        grid-column: 1;
-    }
-
-    .footer__content {
-        grid-template-columns: 1fr;
-        justify-items: center;
-    }
 }
 
-/* For medium devices */
 @media screen and (min-width: 540px) {
-    .home__container,
-    .delivery__container {
+    .home__container {
         grid-template-columns: 360px;
         justify-content: center;
     }
@@ -802,74 +176,21 @@ img {
     }
 
     .recipe__container {
-        grid-template-columns: repeat(20px, 230px);
+        grid-template-columns: repeat(2, 230px);
         justify-content: center;
         column-gap: 3rem;
-    }
-
-    .popular__container {
-        grid-template-columns: repeat(2, 160px);
-        justify-content: center;
-    }
-
-    .contact {
-        max-width: 500px;
-        margin: 0 auto;
     }
 }
 
 @media screen and (min-width: 768px) {
-    .popular__container {
-        grid-template-columns: repeat(3, 160px);
-    }
-
-    .footer__social {
-        grid-column: initial;
-    }
-
-    .footer__content {
-        grid-template-columns: repeat(3, 1fr);
+    .home__container {
+        grid-template-columns: 1fr 1fr;
         align-items: center;
-    }
-
-    .footer__link:nth-child(1) {
-        justify-self: start;
-    }
-
-    .footer__link:nth-child(2) {
-        order: 2;
-        justify-self: end;
+        column-gap: 2rem;
     }
 }
 
-/* For large devices */
 @media screen and (min-width: 1150px) {
-    .container {
-        margin-inline: auto;
-    }
-
-    .section {
-        padding-block: 7rem 2rem;
-    }
-
-    .section__title {
-        margin-bottom: 4.5rem;
-    }
-
-    .nav {
-        height: calc(var(--header-height) + 2rem);
-    }
-
-    .nav__toggle,
-    .nav__close {
-        display: none;
-    }
-
-    .nav__list {
-        flex-direction: row;
-        column-gap: 4rem;
-    }
-
     .home__container {
         grid-template-columns: 430px 605px;
         align-items: center;
@@ -901,43 +222,7 @@ img {
         bottom: -4rem;
     }
 
-    .home__ingredient {
-        width: 100px;
-    }
-
-    .home__potato-1 {
-        left : -2rem;
-        top: 1.5rem;
-    }
-
-    .home__potato-2 {
-        right: -1.5rem;
-        bottom: -3rem;
-    }
-
-    .home__tomato-1 {
-        width: 70px;
-        top: -1.5rem;
-        right: 10rem;
-    }
-
-    .home__tomato-2 {
-        width: 70px;
-        left: 9.5rem;
-        bottom: -2.5rem;
-    }
-
-    .home__lettuce-1 {
-        top: 4rem;
-        right: -3.5rem;
-    }
-
-    .home__lettuce-2 {
-        left: -3.5rem;
-        bottom: 2rem;
-    }
-
-    .recipe__container  {
+    .recipe__container {
         grid-template-columns: 350px 300px;
         column-gap: 8rem;
         padding-bottom: 3rem;
@@ -966,200 +251,10 @@ img {
         font-size: var(--h3-font-size);
     }
 
-    .recipe__description  {
+    .recipe__description {
         font-size: var(--normal-font-size);
     }
-
-    .popular__container {
-        grid-template-columns: repeat(3, 250px);
-        gap: 6.5rem 4rem;
-        padding-block: 3rem;
-    }
-
-    .popular__card  {
-        padding: 9.5rem 1.25rem 1.25rem;
-        border-radius: 2rem;
-        border-width: 6px;
-    }
-
-    .popular__img {
-        width: 200px;
-        top: -3.5rem;
-    }
-
-    .popular__title {
-        font-size: var(--h2-font-size);
-    }
-
-    .popular__price {
-        font-size: var(--h1-font-size);
-    }
-
-    .popular__button {
-        font-size: 1.5rem;
-        right: 1.25rem;
-        bottom: 1.25rem;
-    }
-
-    .delivery__container {
-        grid-template-columns: 440px 550px;
-        column-gap: 4rem;
-        align-items: center;
-        padding-block: 1rem;
-    }
-
-    .delivery__container .section__title,
-    .delivery__data {
-        text-align: initial;
-    }
-
-    .delivery__description {
-        margin-bottom: 3.5rem;
-    }
-
-    .delivery__sticker {
-        width: 50px;
-        right: 8rem;
-        bottom: 0;
-    }
-
-    .delivery__img {
-        width: 550px;
-    }
-
-    .contact {
-        max-width: initial;
-    }
-
-    .contact__container {
-        border-radius: 4rem;
-        padding-block: 4rem 6.5rem;
-    }
-
-    .contact__content {
-        grid-template-columns: 420px 435px;
-        justify-content: center;
-        column-gap: 6.5rem;
-    }
-
-    .contact__data {
-        grid-template-columns: repeat(2, max-content);
-        text-align: initial;
-        gap: 4.5rem 2rem;
-        order: 1;
-    }
-
-    .contact__social {
-        justify-content: initial;
-    }
-
-    .contact__title {
-        margin-bottom: 1rem;
-    }
-
-    .contact__image {
-        position: relative;
-        width: 100%;
-    }
-
-    .contact__img {
-        width: 420px;
-        position: absolute;
-        top: -2.5rem;
-    }
-
-    .contact__sticker-1 {
-        width: 70px;
-        left: 27rem;
-        top: 10rem;
-    }
-
-    .contact__sticker-2  {
-        width: 40px;
-        right: 10rem;
-        bottom: 5.5rem;
-    }
-
-    .footer {
-        padding-block: 5rem 3rem;
-    }
-
-    .footer__container {
-        row-gap: 3.5rem;
-    }
-
-    .footer__copy {
-        margin-top: 4rem;
-    }
-
-    .scrollup {
-        right: 3rem;
-    }
 }
-
-/* Light theme (default) */
-:root {
-    --bg-color: #ffffff;
-    --text-color: #333333;
-    /* Add other variables */
-  }
-  
-  /* Dark theme */
-  .dark-theme {
-    --bg-color: #121212;
-    --text-color: #f5f5f5;
-    /* Add other variables */
-  }
-  
-  /* Apply theme variables */
-  body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.3s, color 0.3s;
-  }
-  /* Remove all underlines */
-a, a:hover, 
-.home__title, 
-.section__title, 
-.recipe__title {
-  text-decoration: none !important;
-}
-
-/* Or be more specific */
-.nav__link, 
-.home__title, 
-.button {
-  text-decoration: none;
-}
-
-/* Dark mode styles */
-body.dark-theme {
-    background-color: #121212;
-    color: #ffffff;
-}
-
-body.dark-theme .header,
-body.dark-theme .footer {
-    background-color: #1e1e1e;
-}
-
-body.dark-theme a {
-    color: #ffffff;
-}
-
-body.dark-theme .button {
-    background-color: #f7c600;
-    color: #1e1e1e;
-}
-.contact__title {
-    font-family: "Aclonica", sans-serif; 
-    font-size: 1rem; 
-    font-weight: 600; 
-    color: #ffffff; 
-    margin-bottom: 0.5rem; 
-    display: block; 
-}
-
 /* Keyframe for floating animation homepage and etc */
 @keyframes float {
     0% {
@@ -1212,15 +307,32 @@ body.dark-theme .button {
 .home__title {
     animation: float 2.5s ease-in-out forwards, fadeIn 2s ease-in-out; 
 }
-/* Applying  animations to popular cards */
-.popular__card {
-    animation: float 2.5s ease-in-out infinite, fadeIn 2s ease-in-out; 
+ /* Cookie Consent Popup */
+#cookie-consent {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    z-index: 1000;
+    display: none; /* Hidden by default */
 }
 
-.popular__card:hover {
-    animation: float 2s ease-in-out infinite, fadeIn 2s ease-in-out; 
+.cookie-consent__content {
+    text-align: center;
 }
 
-.popular__img {
-    animation: float 3s ease-in-out infinite, fadeIn 2s ease-in-out; ;
+.cookie-consent__buttons {
+    margin-top: 10px;
+}
+
+.cookie-consent__buttons .btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
 }
