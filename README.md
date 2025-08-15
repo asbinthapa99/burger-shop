@@ -1,54 +1,54 @@
-Burger Theme Website.
+🍔 Burger Shop Website
 
+Welcome to our Burger Shop project  a modern, responsive, and mouth-watering website we built as part of our COM109 Client-Side Development coursework.
+We wanted this to be more than just HTML and CSS and it’s interactive, user-friendly, and designed to people who orders burger online.
 
-Welcome to the Burger Theme Website a exiciting  web project that is desined using html, css, and javascript.it is 
-Built with HTML, CSS, and JavaScript (small amount of jQuery) and it’s designed to be modern, responsive, and full of interactivity.
+✨ Features
 
+Multi-Page Layout — Home, Menu, Contact, and Order pages.
 
-🚀 Features
-Multiple Pages : Browse from the Home page to Menu, Contact, and Order without getting lost.
+Fully Responsive — Looks great on desktop, tablet, and mobile.
 
-Fully Responsive : Looks delicious on desktop, tablet, or mobile.
+Smooth Animations — CSS transitions and JavaScript effects for a lively feel.
 
-Smooth Animations : CSS transitions and jQuery effects to keep things lively.
+Form Validation — No messy orders — every input is checked
+.
+Light/Dark Mode Toggle — Pick your flavor of browsing.
 
-Form Validation :  Keeps your input clean and error-free before you hit “Submit.”
+Cookie & LocalStorage Support — Your preferences stay saved.
 
-Accessibility Friendly :  Alt text, ARIA labels, and keyboard navigation baked in.
+Accessible Design — ALT text, ARIA labels, and keyboard navigation.
 
-Light/Dark Mode Toggle : dark mode and light mode for user preference.
+```
+burger-shop/
+  contact.html        # Contact page
+  index.html          # Homepage
+  menu.html           # Menu page
+  order.html          # Order form page
 
-Cookie & LocalStorage Support : saves user preferences so you don’t have to re order that cheeseburger twice.
+  css/
+    common.css        # Shared styles
+    commonn.css       # (typo version of common.css, not used)
+    contact.css       # Contact page styles
+    menu.css          # Menu page styles
+    order.css         # Order page styles
+    sharedcss.css     # Extra shared styles
+    style.css         # Homepage styles
 
-### Project Structure
+  js/
+    cokkie.js         # Cookie & localStorage handling (filename typo)
+    darkmode.js       # Light/Dark mode toggle
+    main.js           # Navbar & site interactions
+    query.js          # jQuery-based interactions
+    validation.js     # Form validation logic
 
-│── index.html # Home page
-│── menu.html # Menu page
-│── contact.html # Contact form page
-│── order.html # Order form page
-│
-├── CSS/
-│ ├── style.css # Main styles
-│ └── order.css # Order page styles
-│
-├── JS/
-│ ├── main.js # Main site interactions
-│ ├── validation.js # Form validation logic
-│ ├── cookie.js # Cookie and local storage handling
-│ └── darkmode.js # Light/Dark mode toggle
-│
-├── images/ # All image files
-└── README.md # This file you’re reading now
+  images/
+```
 
+👩‍💻 Contributors
 
+Asbin Thapa — Project lead, navigation system, dark mode, form validation.
 
----
+Jahid Hasan — Developed menu page (menu.html) and its CSS (menu.css).
 
-### Tech Stack
-
-- HTML5 for structure  
-- CSS3 (Flexbox, Grid, Transitions) for styling and layouts  
-- JavaScript for interactivity  
-- jQuery for smooth animations and DOM magic  
-- Google Fonts for a clean, modern look  
-- SVG Icons for crisp and scalable graphics
+Ritesh Chaudhary — Developed contact page (contact.html) and jQuery-based validation.
