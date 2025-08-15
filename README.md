@@ -1,7 +1,7 @@
 
  Welcome to the Burger Shop Website! 🍔🎉
 
-Hi We’re a bunch of pals from the COM109 Client-Side Development, Coursework 2 crew, teamed up by our Module Coordinator, and this is our Burger Shop website—a super fun, modern project we cooked up together! I’m Asbin Thapa, and I’ve thrown my heart into this group effort, building it with HTML, CSS, JavaScript, and a sprinkle of jQuery to make it responsive and full of life. Peek at our teamwork over at https://github.com/asbinthapa99/burger-shop.git—pretty cool, right?
+Hi We’re a bunch of pals from the COM109 Client-Side Development, Coursework 2 crew, teamed up by our Module Coordinator, and this is our Burger Shop website—a super fun, modern project we cooked up together! I’m Asbin Thapa, and I’ve thrown my heart into this group effort, building it with HTML, CSS, JavaScript, and a sprinkle of jQuery to make it responsive and full of life. Peek at our teamwork over at https://github.com/asbinthapa99/burger-shop.git— pretty. 
 
 Awesome Features
 
