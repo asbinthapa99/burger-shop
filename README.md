@@ -1,7 +1,6 @@
 Burger Shop Website. 
 
-Welcome to our Burger Shop project  a modern, responsive, and mouth-watering website we built as part of our COM109 Client-Side Development coursework.
-We wanted this to be more than just HTML and CSS and it’s interactive, user-friendly, and designed to people who orders burger online.
+Welcome to our Burger Shop project a modern, responsive, and aesthetic website we built as part of our COM109 Client-Side Development coursework. and We wanted this to be more than just HTML and CSS and it’s interactive, user-friendly, and designed to people who orders burger online.
 
  Features
  
@@ -28,7 +27,6 @@ burger-shop/
 
   css/
     common.css        # Shared styles
-    commonn.css       # (typo version of common.css, not used)
     contact.css       # Contact page styles
     menu.css          # Menu page styles
     order.css         # Order page styles
