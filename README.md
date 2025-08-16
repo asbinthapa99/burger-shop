@@ -62,6 +62,7 @@ Website looks.
 <img width="1420" height="800" alt="image" src="https://github.com/user-attachments/assets/c6b9670f-b89c-4aae-9fd1-9b9527f7005a" />
 <img width="1426" height="811" alt="image" src="https://github.com/user-attachments/assets/faad5651-b708-43e9-9b4b-64c7864a0a05" />
 <img width="1428" height="806" alt="image" src="https://github.com/user-attachments/assets/6525a7a6-a42e-40b5-8195-360dbe249cee" />
+<img width="1406" height="813" alt="image" src="https://github.com/user-attachments/assets/dadd07ea-3b39-43d3-abd0-3cee2eaa203e" />
 
 
 
