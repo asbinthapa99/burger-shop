@@ -1,0 +1,338 @@
+/******************* HOME *******************/
+.home__container {
+    padding-block: 3rem 2rem;
+    justify-content: center;
+    row-gap: 3.5rem;
+}
+
+.home__data {
+    position: relative;
+    text-align: center;
+}
+
+.home__title {
+    font-size: var(--biggest-font-size);
+    margin-bottom: 1rem;
+    font-family: var(--second-font);
+    animation: float 2.5s ease-in-out forwards, fadeIn 2s ease-in-out;
+}
+
+.home__description {
+    margin-bottom: 2.5rem;
+    color: var(--text-color);
+}
+
+.home__sticker {
+    width: 40px;
+    rotate: 15deg;
+    opacity: 0.5;
+    position: absolute;
+    bottom: 2rem;
+    right: 1rem;
+}
+
+.home__images {
+    position: relative;
+    display: grid;
+    justify-items: center;
+    justify-self: center;
+}
+
+.home__burger {
+    width: 280px;
+    filter: var(--shadow-big-img);
+    z-index: 2;
+    animation: float 3s ease-in-out infinite, fadeIn 1.5s ease-in-out;
+}
+
+.home__dish {
+    max-width: initial;
+    width: 300px;
+    position: absolute;
+    bottom: -2.5rem;
+    filter: var(--shadow-big-img);
+    animation: float 3s ease-in-out infinite, fadeIn 1.5s ease-in-out;
+}
+
+.button {
+    background-color: var(--first-color);
+    color: var(--title-color);
+    padding: 1rem 1.5rem;
+    font-family: var(--second-font);
+    border-radius: 4rem;
+    transition: box-shadow .4s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.button:hover {
+    box-shadow: 0 8px 24px hsla(22, 100%, 8%, .2);
+}
+
+/******************* RECIPE *******************/
+.recipe {
+    overflow: hidden;
+}
+
+.recipe__container {
+    grid-template-columns: 0.5fr 1fr;
+    column-gap: 1rem;
+    padding-bottom: 2rem;
+    animation: float 3s ease-in-out infinite, fadeIn 1.5s ease-in-out;
+}
+
+.recipe__image {
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.recipe__img {
+    max-width: initial;
+    width: 200px;
+    filter: var(--shadow-big-img);
+    position: absolute;
+    left: -6rem;
+    animation: float 3s ease-in-out infinite, fadeIn 1.5s ease-in-out;
+}
+
+.recipe__data {
+    display: grid;
+    row-gap: 2rem;
+}
+
+.recipe__card {
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+.recipe__box {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    background-color: var(--first-color);
+    border: 3px solid var(--container-color);
+    border-radius: 0.75rem;
+    display: grid;
+    place-items: center;
+}
+
+.recipe__box img {
+    width: 50px;
+    filter: var(--shadow-small-img);
+}
+
+.recipe__title {
+    font-size: var(--normal-font-size);
+    margin-bottom: 0.5rem;
+    font-family: var(--second-font);
+    text-decoration: none;
+}
+
+.recipe__description {
+    font-size: var(--small-font-size);
+    color: var(--text-color-light);
+}
+
+.recipe__card:nth-child(even) .recipe__box {
+    order: 1;
+}
+
+/******************* BREAKPOINTS FOR RESPONSIVE *******************/
+@media screen and (max-width: 330px) {
+    .home__title {
+        font-size: 2.5rem;
+    }
+
+    .home__burger {
+        width: 210px;
+    }
+
+    .home__dish {
+        width: 250px;
+        bottom: -2rem;
+    }
+
+    .recipe__container {
+        column-gap: 5rem;
+    }
+
+    .recipe__img {
+        left: -8rem;
+    }
+}
+
+@media screen and (min-width: 540px) {
+    .home__container {
+        grid-template-columns: 360px;
+        justify-content: center;
+    }
+
+    .recipe__img {
+        position: initial;
+    }
+
+    .recipe__container {
+        grid-template-columns: repeat(2, 230px);
+        justify-content: center;
+        column-gap: 3rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .home__container {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        column-gap: 2rem;
+    }
+}
+
+@media screen and (min-width: 1150px) {
+    .home__container {
+        grid-template-columns: 430px 605px;
+        align-items: center;
+        column-gap: 4rem;
+        padding-block: 7rem 4rem;
+    }
+
+    .home__data {
+        text-align: initial;
+    }
+
+    .home__description {
+        margin-bottom: 3.5rem;
+        padding-right: 3rem;
+    }
+
+    .home__sticker {
+        width: 60px;
+        right: 10rem;
+        bottom: 1rem;
+    }
+
+    .home__burger {
+        width: 490px;
+    }
+
+    .home__dish {
+        width: 560px;
+        bottom: -4rem;
+    }
+
+    .recipe__container {
+        grid-template-columns: 350px 300px;
+        column-gap: 8rem;
+        padding-bottom: 3rem;
+    }
+
+    .recipe__img {
+        width: 350px;
+    }
+
+    .recipe__card {
+        column-gap: 1rem;
+    }
+
+    .recipe__box {
+        width: 100px;
+        height: 100px;
+        border-radius: 1.25rem;
+        border-width: 5px;
+    }
+
+    .recipe__box img {
+        width: 85px;
+    }
+
+    .recipe__title {
+        font-size: var(--h3-font-size);
+    }
+
+    .recipe__description {
+        font-size: var(--normal-font-size);
+    }
+}
+/* Keyframe for floating animation homepage and etc */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Keyframe for fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Applying  floating and fade-in animation to home images and contact images */
+.section__title { 
+    animation: float 2.5s ease-in-out forwards, fadeIn 2s ease-in-out; 
+}
+.home__burger {
+    animation: float 3s ease-in-out infinite, fadeIn 1.5s ease-in-out;
+}
+
+.home__dish {
+    animation: float 3s ease-in-out infinite, fadeIn 1.5s ease-in-out;
+}
+
+.contact__image { 
+    animation: float 2s ease-in-out infinite, fadeIn 2s ease-in-out; 
+}
+
+.recipe__img {
+    animation: float 3s ease-in-out infinite, fadeIn 1.5s ease-in-out;
+}
+
+.recipe__container {
+    animation: float 3s ease-in-out infinite, fadeIn 1.5s ease-in-out;
+}
+
+.home__title {
+    animation: float 2.5s ease-in-out forwards, fadeIn 2s ease-in-out; 
+}
+ /* Cookie Consent Popup */
+#cookie-consent {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    z-index: 1000;
+    display: none; /* Hidden by default */
+}
+
+.cookie-consent__content {
+    text-align: center;
+}
+
+.cookie-consent__buttons {
+    margin-top: 10px;
+}
+
+.cookie-consent__buttons .btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}

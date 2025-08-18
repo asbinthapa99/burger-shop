@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.min.css">
+  <link rel="stylesheet" href="/CSS/sharedcss.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <title>Burger Shop</title>
+</head>
+<body>
+  <!-- Home Button -->
+  <a href="index.html" class="button home-button">Home</a>
+
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo">
+        <img src="images/logo-burger.svg" alt="Burger Logo">
+        Burger
+      </a>
+      <ul class="nav__list">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="menu.html" class="nav__link">Popular</a></li>
+        <li><a href="contact.html" class="nav__link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- CONTACT Section -->
+  <section class="contact section" id="contact">
+    <div class="contact__container container grid">
+      <h2 class="section__title">Contact Now</h2>
+      <div class="contact__content grid">
+        <!-- Contact Form -->
+        <form id="contact-form" class="contact__data grid" action="https://formspree.io/f/xkgzvzqq" method="POST">
+          <div>
+            <label for="name" class="contact__title">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+          </div>
+          <div>
+            <label for="email" class="contact__title">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+          </div>
+          <div>
+            <label for="message" class="contact__title">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message" required></textarea>
+          </div>
+          <button type="submit" class="button">Send Message</button>
+        </form>
+        <!-- Contact Image -->
+        <div class="contact__image">
+          <img src="./images/contact-man.png" alt="Contact Us" class="contact__img">
+        </div>
+      </div>
+      <!-- Stickers -->
+      <img src="./images/sticker-burger.svg" alt="Burger Sticker" class="contact__sticker-1">
+      <img src="./images/sticker-soda.svg" alt="Soda Sticker" class="contact__sticker-2">
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__container container">
+      <a href="index.html" class="footer__logo button">Home</a>
+      <p class="footer__copy">© All rights reserved by its owner.</p>
+    </div>
+  </footer>
+
+  <!-- Scroll Up Button -->
+  <a href="#" class="scrollup" id="scroll-up">
+    <i class="ri-arrow-up-line"></i>
+  </a>
+
+  <!-- JS Scripts -->
+
+  <script src="./JS/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,536 @@
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/***************** CSS VARIABLES ******************/
+:root {
+    --header-height: 3.5rem;
+
+    /***************** COLORS ******************/
+    --first-color: hsl(56, 94%, 49%);
+    --first-color-alt: hsl(45, 99%, 48%);
+    --second-color: hsl(22, 100%, 8%);
+    --white-color: hsl(161, 88%, 39%);
+    --title-color: hsl(22, 100%, 8%);
+    --text-color: hsl(22, 24%, 32%);
+    --text-color-light: hsl(23, 16%, 40%);
+    --body-color: hsl(34, 100%, 92%);
+    --body-color-alt: hsl(34, 100%, 88%);
+    --container-color: hsl(34, 100%, 96%);
+    --shadow-small-img: drop-shadow(0 4px 16px hsla(22, 100%, 8%, .2));
+    --shadow-big-img: drop-shadow(0 8px 24px hsla(22, 100%, 8%, .2));
+
+    /***************** FONT & TYPOGRAPHY *****************/
+    --body-font: "Montserrat", sans-serif;
+    --second-font: "Aclonica", sans-serif;
+    --biggest-font-size: 3rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+
+    /***************** FONT WEIGHT *****************/
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /***************** Z-INDEX *****************/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+
+    /***************** THEME VARIABLES *****************/
+    --bg-color: #ffffff;
+    --text-color: #333333;
+}
+
+/***************** RESPONSIVE TYPOGRAPHY *****************/
+@media screen and (min-width: 1150px) {
+    :root {
+        --biggest-font-size: 4.5rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+    }
+}
+
+/****************** BASE CSS *****************/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+h1, h2, h3, h4 {
+    color: var(--title-color);
+    font-family: var(--second-font);
+    font-weight: var(--font-regular);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/******************* REUSABLE CSS CLASSES ******************/
+.container {
+    max-width: 1120px;
+    margin-inline: 1.5rem;
+}
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.section {
+    padding-block: 5rem 1rem;
+}
+
+.section__title {
+    text-align: center;
+    font-size: var(--h1-font-size);
+    margin-bottom: 2rem;
+    animation: float 2.5s ease-in-out forwards, fadeIn 2s ease-in-out;
+}
+
+.main {
+    overflow: hidden;
+}
+
+/******************* HEADER & NAV *******************/
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--body-color);
+    z-index: var(--z-fixed);
+    transition: box-shadow .4s;
+    box-shadow: 0 4px 16px hsla(22, 100%, 8%, .1);
+}
+
+.nav {
+    position: relative;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__logo {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    color: var(--title-color);
+    font-family: var(--second-font);
+}
+
+.nav__logo img {
+    width: 20px;
+}
+
+.nav__logo div {
+    padding: 6px;
+    border-radius: 0.5rem;
+    background-color: var(--first-color);
+}
+
+.nav__close,
+.nav__toggle {
+    display: flex;
+    font-size: 1.5rem;
+    color: var(--title-color);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1150px) {
+    .nav__menu {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--body-color);
+        padding-block: 4.5rem 3.5rem;
+        box-shadow: 0 4px 16px hsla(22, 100%, 8%, .2);
+        transition: top .4s;
+    }
+}
+
+.nav__list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+}
+
+.nav__link {
+    position: relative;
+    color: var(--title-color);
+    font-family: var(--second-font);
+    text-decoration: none;
+}
+
+.nav__link::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    transition: width .3s;
+    background-color: var(--first-color);
+    position: absolute;
+    left: 0;
+    bottom: -0.5rem;
+}
+
+.nav__link:hover::after {
+    width: 100%;
+}
+
+.nav__close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+}
+
+.show-menu {
+    top: 0;
+}
+
+/******************* FOOTER *******************/
+.footer {
+    padding-block: 3rem 2rem;
+}
+
+.footer__container {
+    row-gap: 2rem;
+}
+
+.footer__logo {
+    font-size: var(--h1-font-size);
+    font-family: var(--second-font);
+    color: var(--title-color);
+    justify-self: center;
+}
+
+.footer__content {
+    grid-template-columns: repeat(2, max-content);
+    justify-content: center;
+}
+
+.footer__link {
+    color: var(--text-color);
+}
+
+.footer__social {
+    grid-column: 1 / 3;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.footer__social a {
+    width: 32px;
+    height: 32px;
+    background-color: var(--first-color);
+    color: var(--second-color);
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    transition: transform .4s;
+    display: grid;
+    place-items: center;
+}
+
+.footer__social a:hover {
+    transform: translateY(-0.25rem);
+}
+
+.footer__copy {
+    display: block;
+    text-align: center;
+    font-size: var(--small-font-size);
+    margin-top: 3.5rem;
+}
+
+/******************* MODIFY SCROLL BAR *******************/
+::-webkit-scrollbar {
+    width: 0.6rem;
+    background-color: hsl(34, 16%, 75%);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: hsl(34, 16%, 65%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(34, 16%, 55%);
+}
+
+/******************* Go To Top BUTTON *******************/
+.scrollup {
+    position: fixed;
+    right: 1rem;
+    bottom: -50%;
+    color: var(--title-color);
+    background-color: var(--body-color);
+    box-shadow: 0 4px 16px hsla(22, 100%, 8%, .2);
+    display: inline-flex;
+    padding: 6px;
+    font-size: 1.25rem;
+    border-radius: 0.35rem;
+    z-index: var(--z-tooltip);
+    transition: bottom 0.4s, transform 0.4s;
+}
+
+.scrollup:hover {
+    transform: translateY(-0.5rem);
+}
+
+.show-scroll {
+    bottom: 3rem;
+}
+
+/******************* THEME STYLES *******************/
+.dark-theme {
+    --bg-color: #121212;
+    --text-color: #f5f5f5;
+}
+
+body.dark-theme {
+    background.
+/* Light theme (default) */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    
+}
+
+/* Dark theme */
+.dark-theme {
+    --bg-color: #121212;
+    --text-color: #f5f5f5;
+    
+}
+
+/* Apply theme variables */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Remove all underlines */
+a, a:hover, 
+.home__title, 
+.section__title, 
+.recipe__title {
+    text-decoration: none !important;
+}
+
+/* Or be more specific */
+.nav__link, 
+.home__title, 
+.button {
+    text-decoration: none;
+}
+
+/* Light theme (default) */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --header-bg: #ffffff;
+    --header-height: 3.5rem;
+}
+/* Light theme (default) */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --header-bg: #ffffff;
+    --header-height: 3.5rem; /* Matches your navbar height */
+}
+
+/* Dark theme */
+.dark-theme {
+    --bg-color: #121212;
+    --text-color: #f5f5f5;
+    --header-bg: #1e1e1e;
+}
+
+/* Apply theme to body and all sections */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    min-height: 100vh; /* Ensure full page coverage */
+}
+
+.header {
+    background-color: var(--header-bg);
+    height: var(--header-height);
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, box-shadow 0.4s ease;
+}
+
+.nav {
+    height: 100%;
+    align-items: center;
+}
+
+/* Apply theme to main content sections */
+.main, .home, .recipe, .footer {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Ensure links and buttons adapt to theme */
+a {
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.dark-theme .btn-outline-secondary {
+    color: #f5f5f5;
+    border-color: #f5f5f5;
+}
+
+.dark-theme .btn-outline-secondary:hover {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* Override Bootstrap defaults if needed */
+.dark-theme .navbar {
+    background-color: var(--header-bg) !important;
+}
+
+.dark-theme .navbar-nav .nav-link {
+    color: var(--text-color) !important;
+}
+
+.dark-theme .navbar-nav .nav-link:hover {
+    color: #ffffff !important;
+}
+/* Keyframe for floating animation */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Keyframe for fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/******************* BREAKPOINTS FOR RESPONSIVE *******************/
+@media screen and (min-width: 1150px) {
+    .container {
+        margin-inline: auto;
+    }
+
+    .section {
+        padding-block: 7rem 2rem;
+    }
+
+    .section__title {
+        margin-bottom: 4.5rem;
+    }
+
+    .nav {
+        height: calc(var(--header-height) + 2rem);
+    }
+
+    .nav__toggle,
+    .nav__close {
+        display: none;
+    }
+
+    .nav__list {
+        flex-direction: row;
+        column-gap: 4rem;
+    }
+
+    .footer {
+        padding-block: 5rem 3rem;
+    }
+
+    .footer__container {
+        row-gap: 3.5rem;
+    }
+
+    .footer__copy {
+        margin-top: 4rem;
+    }
+
+    .scrollup {
+        right: 3rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .footer__social {
+        grid-column: initial;
+    }
+
+    .footer__content {
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+    }
+
+    .footer__link:nth-child(1) {
+        justify-self: start;
+    }
+
+    .footer__link:nth-child(2) {
+        order: 2;
+        justify-self: end;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .container {
+        margin-inline: 1rem;
+    }
+
+    .footer__social {
+        grid-column: 1;
+    }
+
+    .footer__content {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+}

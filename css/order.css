@@ -1,0 +1,61 @@
+
+/* Inspired by w3 schools, this css file styles a form of ordering a burger with inputs and a submit button. */
+
+
+/* Top navigation bar */
+.top-nav {
+    background-color: #fdfdfd;
+    text-align: center;
+    text-decoration: double;
+    padding :  1rem;
+  }
+  
+  /* Form layout */
+  .container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: #11be64;
+    border-radius: 6px;
+  }
+  
+  /* Label group */
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  /* Inputs, selects and text area styling css */
+  input, select, textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  /* Button style */
+  button.btn {
+    background-color: #25b781;
+    color: rgba(0, 0, 95, 0.39);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button.btn:hover {
+    background-color: #fdfdfd;
+  }
+  
+  /* Response message styling */
+  .response-message {
+    margin-top: 1rem;
+    font-style: italic;
+  }
+  
