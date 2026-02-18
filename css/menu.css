@@ -11,10 +11,39 @@
 
 .popular__card {
     position: relative;
-    background-color: var(--first-color);
+    background: linear-gradient(135deg, var(--first-color), var(--first-color-alt));
     padding: 6rem 0.75rem 1rem;
     border-radius: 1rem;
     border: 4px solid var(--container-color);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: slideInUp 0.6s ease-out both;
+    box-shadow: 0 8px 20px rgba(255, 214, 79, 0.2);
+}
+
+.popular__card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.popular__card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.popular__card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.popular__card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.popular__card:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.popular__card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 16px 32px rgba(255, 214, 79, 0.4);
+    border-color: rgba(255, 255, 255, 0.5);
 }
 
 .popular__img {
@@ -25,10 +54,13 @@
     width: 120px;
     margin: 0 auto;
     filter: var(--shadow-small-img);
-    transition: transform .4s;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: float 3s ease-in-out infinite;
 }
 
-.popular__title {
+.popular__card:hover .popular__img {
+    transform: translateY(-1rem) scale(1.1) rotate(10deg);
+}
     font-size: var(--normal-font-size);
     margin-bottom: 0.75rem;
 }
@@ -45,13 +77,22 @@
     bottom: 1rem;
     outline: none;
     border: none;
-    background-color: var(--second-color);
+    background: linear-gradient(135deg, var(--second-color), rgba(0, 0, 0, 0.8));
     color: var(--white-color);
     padding: 6px;
     border-radius: 0.5rem;
     font-size: 1.25rem;
     display: inline-flex;
     cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.popular__button:hover {
+    background: linear-gradient(135deg, var(--first-color), var(--first-color-alt));
+    transform: scale(1.15) rotate(-5deg);
+    box-shadow: 0 8px 20px rgba(255, 214, 79, 0.4);
+    color: var(--title-color);
 }
 
 .popular_card:hover .popular_img {

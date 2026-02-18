@@ -1,7 +1,7 @@
 /******************* CONTACT SECTION *******************/
 .contact__container {
     position: relative;
-    background-color: var(--second-color);
+    background: linear-gradient(135deg, var(--second-color), rgba(34, 34, 34, 0.95));
     padding: 4rem 2rem;
     border-radius: 2rem;
     overflow: hidden;
@@ -11,6 +11,8 @@
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    animation: slideInUp 0.8s ease-out;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 .contact__content {
@@ -33,24 +35,48 @@
 .contact__data textarea {
     width: 100%;
     padding: 0.75rem;
-    border: 1px solid var(--text-color-light);
+    border: 2px solid rgba(255, 214, 79, 0.3);
     border-radius: 0.5rem;
     font-size: var(--normal-font-size);
     font-family: var(--body-font);
     color: var(--text-color);
-    background-color: var(--white-color);
+    background-color: rgba(255, 255, 255, 0.95);
     text-align: left;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: slideInUp 0.6s ease-out backwards;
 }
 
-.contact__data input:focus,
-.contact__data textarea:focus {
-    outline: none;
-    border-color: var(--first-color);
-    box-shadow: 0 0 4px var(--first-color);
+.contact__data input:nth-of-type(1) {
+    animation-delay: 0.1s;
 }
 
-.contact__data button {
-    padding: 0.75rem 1.5rem;
+.contact__data input:nth-of-type(2) {
+    animation-delay: 0.2s;
+}
+: linear-gradient(135deg, var(--first-color), var(--first-color-alt));
+    color: var(--title-color);
+    border: none;
+    border-radius: 0.5rem;
+    font-size: var(--normal-font-size);
+    font-family: var(--second-font);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    width: fit-content;
+    align-self: center;
+    margin-top: 1rem;
+    font-weight: 600;
+    box-shadow: 0 8px 20px rgba(255, 214, 79, 0.3);
+    animation: slideInUp 0.8s ease-out 0.4s both;
+}
+
+.contact__data button:hover {
+    background: linear-gradient(135deg, var(--first-color-alt), var(--first-color));
+    transform: translateY(-3px) scale(1.08);
+    box-shadow: 0 12px 32px rgba(255, 214, 79, 0.5);
+}
+
+.contact__data button:active {
+    transform: translateY(-1px).75rem 1.5rem;
     background-color: var(--first-color);
     color: var(--title-color);
     border: none;
@@ -60,7 +86,12 @@
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
     width: fit-content;
-    align-self: center;
+    align-self: center;, slideInUp 0.8s ease-out;
+    transition: transform 0.4s ease;
+}
+
+.contact__image:hover .contact__img {
+    transform: scale(1.02)
     margin-top: 1rem;
 }
 

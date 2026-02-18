@@ -190,17 +190,25 @@ img {
     color: var(--title-color);
     font-family: var(--second-font);
     text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-weight: 500;
 }
 
 .nav__link::after {
     content: '';
     width: 0;
     height: 3px;
-    transition: width .3s;
-    background-color: var(--first-color);
+    transition: width 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: linear-gradient(90deg, var(--first-color), var(--first-color-alt));
     position: absolute;
     left: 0;
     bottom: -0.5rem;
+    border-radius: 2px;
+}
+
+.nav__link:hover {
+    color: var(--first-color);
+    transform: translateY(-2px);
 }
 
 .nav__link:hover::after {
@@ -252,17 +260,19 @@ img {
 .footer__social a {
     width: 32px;
     height: 32px;
-    background-color: var(--first-color);
+    background: linear-gradient(135deg, var(--first-color), var(--first-color-alt));
     color: var(--second-color);
     font-size: 1.5rem;
     border-radius: 0.5rem;
-    transition: transform .4s;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: grid;
     place-items: center;
+    box-shadow: 0 4px 12px rgba(255, 214, 79, 0.2);
 }
 
 .footer__social a:hover {
-    transform: translateY(-0.25rem);
+    transform: translateY(-4px) scale(1.15) rotate(-10deg);
+    box-shadow: 0 8px 24px rgba(255, 214, 79, 0.4);
 }
 
 .footer__copy {
@@ -290,12 +300,24 @@ img {
 .scrollup {
     position: fixed;
     right: 1rem;
-    bottom: -50%;
-    color: var(--title-color);
-    background-color: var(--body-color);
+    bottom: -5: linear-gradient(135deg, var(--first-color), var(--first-color-alt));
     box-shadow: 0 4px 16px hsla(22, 100%, 8%, .2);
     display: inline-flex;
     padding: 6px;
+    font-size: 1.25rem;
+    border-radius: 0.35rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: var(--z-tooltip);
+}
+
+.scrollup:hover {
+    transform: translateY(-3px) scale(1.15);
+    box-shadow: 0 8px 24px rgba(255, 214, 79, 0.4);
+}
+
+.show-scroll {
+    bottom: 3rem;
+}
     font-size: 1.25rem;
     border-radius: 0.35rem;
     z-index: var(--z-tooltip);
