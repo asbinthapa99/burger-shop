@@ -3,18 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Order a Burgers| Burger Shop</title>
+  <title>Order a Burgers | Burger Shop</title>
   <link rel="stylesheet" href="css/order.css" />
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.min.css">
 
 </head>
 <body>
   <nav class="top-nav">
-    <a href="index.html" class="w3-button">
-      <i class="fa fa-home"></i> Home 
+    <a href="index.html" class="home-link">
+      <i class="ri-home-line"></i> Home 
     </a>
-    
   </nav>
 
   <main class="container">
@@ -68,20 +66,17 @@
           name="quantity"
           min="1"
           value="1"
-        
+          required
         />
       </div>
 
       <div class="form-group">
-
-        <label for="notes">Additional Notes and addresses </label>
+        <label for="notes">Additional Notes and Address</label>
         <textarea
           id="notes"
           name="message"
           rows="3"
-          placeholder=" special notes and  address?"
-
- 
+          placeholder="Special notes and address?"
         ></textarea>
       </div>
 
@@ -93,6 +88,7 @@
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="js/query.js"></script>
+  <script src="js/validation.js"></script>
 
 </body>
 </html>

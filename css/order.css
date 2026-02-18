@@ -1,5 +1,37 @@
 /* Inspired by w3 schools, this css file styles a form of ordering a burger with inputs and a submit button. */
 
+/* Animations */
+@keyframes slideInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 /* Top navigation bar */
 .top-nav {
     background: linear-gradient(135deg, #fdfdfd, #f5f5f5);
@@ -15,6 +47,13 @@
     text-decoration: none;
     color: #333;
     font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.home-link {
+    padding: 0.5rem 1rem !important;
 }
 
 .top-nav a:hover {
